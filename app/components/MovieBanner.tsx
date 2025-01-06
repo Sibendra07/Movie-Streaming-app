@@ -8,14 +8,16 @@ interface MovieBannerProps {
 
 export default function MovieBanner({ movie }: MovieBannerProps) {
   return (
-    <div className=" w-full h-full"> {/* Responsive height */}
+    <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]"> {/* Responsive height */}
       <div 
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
         }}
         className="absolute inset-0"
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent flex flex-col justify-end p-4 sm:p-6 md:p-8">
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
           <div className="absolute bottom-0 left-0 w-full p-4 sm:p-6 md:p-8"> {/* Responsive padding */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-4">
               {movie.title}
