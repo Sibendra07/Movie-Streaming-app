@@ -32,10 +32,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-black">
+    <main className="bg-black min-h-screen"> {/* Added min-h-screen */}
       {selectedMovie && <MovieBanner movie={selectedMovie} />}
-      <div className="container mx-auto px-4 py-8">
-        <h2 className="text-2xl font-bold text-white mb-6">Popular Movies</h2>
+      <div className="container mx-auto px-4 py-6 sm:py-8">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">
+          Popular Movies
+        </h2>
         <MovieCarousel 
           movies={movies} 
           onSelectMovie={setSelectedMovie}
